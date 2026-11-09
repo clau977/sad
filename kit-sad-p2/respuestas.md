@@ -36,7 +36,14 @@ En el firewall (`./lab.sh fw`): `tcpdump -ni wan host 198.51.100.62 -c 6`. Mient
 ```text
 (pega aquí la salida de tcpdump)
 ```
-
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on wan, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+17:04:14.031199 IP 198.51.100.62.47124 > 198.51.100.254.51820: UDP, length 148
+17:04:19.151127 ARP, Request who-has 198.51.100.254 tell 198.51.100.62, length 28
+17:04:19.151150 ARP, Reply 198.51.100.254 is-at 46:c4:83:fc:ca:57, length 28
+17:04:39.119315 IP 198.51.100.62.47124 > 198.51.100.254.51820: UDP, length 32
+17:05:04.207152 IP 198.51.100.62.47124 > 198.51.100.254.51820: UDP, length 32
+17:05:04.207519 IP 198.51.100.62.47124 > 198.51.100.254.51820: UDP, length 148
 En dos líneas: ¿qué se ve por la calle y qué NO se ve?
 
 >
