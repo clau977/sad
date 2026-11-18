@@ -65,7 +65,14 @@ qué hacen falta los dos?
 
 Nota del análisis **antes** de bastionar (D0):
 
->
+>### D4 · Auditoría con Lynis
+
+* **Puntuación antes (D0):** <NOTA_ANTES>
+* **Puntuación después (D4):** <NOTA_DESPUES>
+
+* **¿Por qué no llega a 100?** Porque Lynis evalúa cientos de controles genéricos de todo el sistema operativo (particionado separado de `/tmp` o `/var`, módulos del kernel, auditoría `auditd`, políticas de contraseñas PAM, firewall local en el propio host, etc.). Al tratarse de un contenedor y un servidor con un propósito específico, hay controles del kernel o de hardware que no aplican o no están configurados.
+* **¿Significa que el servidor sigue inseguro?** No. El índice de Lynis es una guía orientativa de endurecimiento, no una nota de aprobado/suspenso. Un servidor puede ser completamente seguro para su función si se han cerrado sus vectores de ataque reales (SSH solo con llave, Fail2ban activo, cabeceras web y cortafuegos perimetral delante).
+* **Ejemplo de aviso que sigue saliendo:** Por ejemplo, Lynis suele avisar de que no hay un cortafuegos activo instalado en el propio servidor (`iptables`/`nftables` local) o que faltan herramientas de auditoría del sistema como `auditd` o integridad de ficheros (`AIDE`), además de sugerir particiones separadas para directorios como `/home` o `/var`.
 
 Nota **después** (D4). ¿Por qué no llega a 100? ¿Significa que el servidor sigue inseguro? Comenta un aviso que siga saliendo.
 
